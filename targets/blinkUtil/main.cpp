@@ -7,23 +7,23 @@
  * GPIO.
  */
 
+#include <core/manager.hpp>
+#include <core/utils/time.hpp>
 #include <dev/LED.hpp>
-#include <EVT/manager.hpp>
-#include <EVT/utils/time.hpp>
 
-namespace IO = EVT::core::IO;
-namespace DEV = BOARD_NAME::DEV;
-namespace time = EVT::core::time;
+namespace io = core::io;
+namespace dev = BOARD_NAME::dev;
+namespace time = core::time;
 
 int main() {
     // Initialize system
-    EVT::core::platform::init();
+    core::platform::init();
 
     // Setup the GPIO pin.
     // Notice that the pin used is called "LED". Each platform has a dedicated
     // LED pin, for the f3xx that is PB_13.
-    IO::GPIO& ledGPIO = IO::getGPIO<IO::Pin::LED>();
-    DEV::LED led(ledGPIO, DEV::LED::ActiveState::HIGH);
+    io::GPIO& ledGPIO = io::getGPIO<io::Pin::LED>();
+    dev::LED led(ledGPIO, dev::LED::ActiveState::HIGH);
 
     while (1) {
         led.toggle();
