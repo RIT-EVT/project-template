@@ -2,8 +2,7 @@
 
 namespace BOARD_NAME::dev {
 
-LED::LED(core::io::GPIO& gpio, LED::ActiveState activeState)
-    : gpio(gpio) {
+LED::LED(core::io::GPIO& gpio, LED::ActiveState activeState) : gpio(gpio) {
     this->setState(core::io::GPIO::State::LOW);
 }
 
@@ -30,4 +29,4 @@ void LED::setState(core::io::GPIO::State state) {
     }
 }
 
-}// namespace BOARD_NAME::dev
+} // namespace BOARD_NAME::dev

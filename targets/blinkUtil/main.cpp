@@ -11,8 +11,8 @@
 #include <core/utils/time.hpp>
 #include <dev/LED.hpp>
 
-namespace io = core::io;
-namespace dev = BOARD_NAME::dev;
+namespace io   = core::io;
+namespace dev  = BOARD_NAME::dev;
 namespace time = core::time;
 
 int main() {
